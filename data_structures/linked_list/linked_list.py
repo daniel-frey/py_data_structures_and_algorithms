@@ -38,7 +38,10 @@ class LinkedList(object):
         self.size += 1
 
     def includes(self, value):
-        """Find method for linked list."""
+        """Find method for linked list.
+
+        Takes in a value as an argument and attempts to find that value in a ll
+        """
         current_node = self.head
         while current_node and current_node._next is not None:
             if current_node.val == value:

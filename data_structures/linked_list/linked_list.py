@@ -48,3 +48,45 @@ class LinkedList(object):
                 return True
             current_node = current_node._next
         return False
+
+    def insertBefore(self, value, newVal):
+        """Insert before a given value in a linked list."""
+        current_node = self.head
+        previous_node = None
+        while current_node:
+            if current_node.val == value:
+                if previous_node is None:
+                    self.insert(newVal)
+                else:
+                    new_node = Node(newVal)
+                    new_node._next = current_node
+                    previous_node._next = new_node
+                    self.size += 1
+                break
+            previous_node = current_node
+            current_node = current_node._next
+
+    def insertAfter(self, value, newVal):
+        """Insert after a given value in a linked list."""
+        current_node = self.head
+        while current_node:
+            if current_node.val == value:
+                position = current_node._next
+                current_node._next = Node(newVal)
+                current_node._next._next = position
+                self.size += 1
+                break
+            current_node = current_node._next
+
+    def append(self, value):
+        """Insert a value to the end of a linked list."""
+        if self.head is None:
+            self.insert(value)
+        else:
+            current_node = self.head
+            while current_node is not None:
+                if current_node._next is None:
+                    current_node._next = Node(value)
+                    self.size += 1
+                    break
+                current_node = current_node._next

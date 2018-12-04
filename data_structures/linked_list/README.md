@@ -16,6 +16,12 @@ This is a class that will create Linked Lists in Python
 * Define a method called ```insert``` which takes any value as an argument and adds that value to the ```head``` of the list with an O(1) Time performance.
 * Define a method called ```includes``` which takes any value as an argument and returns ```True``` or ```False``` depending on whether that value exists as a Node value within the list.
 
+## New Features Added 3-December Which Extend the LL Class
+
+* ```.append(value)``` which adds a new node with the given value to the end of the list
+* ```.insertBefore(value, newVal)``` which add a new node with the given newValue immediately before the first value node
+* ```.insertAfter(value, newVal)``` which add a new node with the given newValue immediately after the first value node
+
 ## Testing
 
 All testing is available via Pytest

@@ -90,3 +90,13 @@ class LinkedList(object):
                     self.size += 1
                     break
                 current_node = current_node._next
+
+    def kth_from_end(self, k):
+        """Find the value that is (k) from the end of the linked list class."""
+        if len(self) - k < 0:
+            raise AttributeError
+
+        current_node = self.head
+        for i in range(len(self) - k - 1):
+            current_node = current_node._next
+        return current_node.val

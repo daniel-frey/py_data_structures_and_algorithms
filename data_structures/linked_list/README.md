@@ -22,6 +22,11 @@ This is a class that will create Linked Lists in Python
 * ```.insertBefore(value, newVal)``` which add a new node with the given newValue immediately before the first value node
 * ```.insertAfter(value, newVal)``` which add a new node with the given newValue immediately after the first value node
 
+## New Features Added 4-December Which Extend the LL Class
+
+* Write a method for the Linked List class which takes a number, ```k```, as a parameter. Return the node’s value that is ```k``` from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+
+
 ## Testing
 
 All testing is available via Pytest

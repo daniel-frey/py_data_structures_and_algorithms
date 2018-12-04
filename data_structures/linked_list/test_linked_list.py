@@ -92,3 +92,56 @@ def test_insert_ll_insert():
     ll.insert('banana')
     assert ll.head.val is 'banana'
     assert ll.head._next.val is 'apples'
+
+
+def test_append_to_end_of_list(small_ll):
+    """Test the append method (end) on the small ll."""
+    small_ll.append(5)
+    assert len(small_ll) == 5
+    assert small_ll.head._next._next._next._next.val == 5
+
+
+def test_insert_aftergiven_value(small_ll):
+    """Test insert after method on the small ll."""
+    small_ll.insertAfter(3, 8)
+    assert len(small_ll) == 5
+    assert small_ll.head._next._next.val == 8
+
+
+def test_insert_after_given_value_end(small_ll):
+    """Test insert after method (end) on the small ll."""
+    small_ll.insertAfter(1, 9)
+    assert len(small_ll) == 5
+    assert small_ll.head._next._next._next._next.val == 9
+
+
+def test_insert_after_invalid_node(small_ll):
+    """Test insert after method as invalid on the small ll."""
+    small_ll.insertAfter(6, 9)
+    assert len(small_ll) == 4
+
+
+def test_insert_before_given_value(small_ll):
+    """Test the insert before method."""
+    small_ll.insertBefore(2, 6)
+    assert len(small_ll) == 5
+    assert small_ll.head._next._next.val == 6
+
+
+def test_append_to_an_empty_list(empty_ll):
+    """Test append to an empty list."""
+    empty_ll.append(2)
+    assert empty_ll.head.val == 2
+
+
+def test_insert_before_the_head(small_ll):
+    """Test the insert before method (head) on the small ll."""
+    small_ll.insertBefore(4, 7)
+    assert len(small_ll) == 5
+    assert small_ll.head.val == 7
+
+
+def test_insert_before_invalid_node(small_ll):
+    """Test insert before method as invalid on the small ll."""
+    small_ll.insertBefore(6, 7)
+    assert len(small_ll) == 4

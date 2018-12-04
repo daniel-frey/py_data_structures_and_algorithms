@@ -145,3 +145,22 @@ def test_insert_before_invalid_node(small_ll):
     """Test insert before method as invalid on the small ll."""
     small_ll.insertBefore(6, 7)
     assert len(small_ll) == 4
+
+
+def test_kth_from_end_of_empty_ll(empty_ll):
+    """Test that the empty ll will return an attribute error."""
+    with pytest.raises(AttributeError):
+        small_ll.kth_from_end(2)
+        small_ll.kth_from_end(-1)
+
+
+def test_kth_from_end_last_value(small_ll):
+    """Test that the last node equals expected."""
+    small_ll.kth_from_end(0)
+    assert small_ll.head._next._next._next.val == 1
+
+
+def test_kth_from_end_second_to_last_value(small_ll):
+    """Test that the second from end equals expected."""
+    small_ll.kth_from_end(2)
+    assert small_ll.head._next.val == 3

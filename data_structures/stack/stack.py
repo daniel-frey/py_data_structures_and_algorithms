@@ -1,5 +1,6 @@
 from .node import Node
 
+
 class Stack:
     """Stack Class"""
     def __init__(self, iterable=[]):

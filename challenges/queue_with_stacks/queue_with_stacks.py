@@ -17,22 +17,22 @@ class KindaQueue(object):
     def __len__(self):
         return self.stack1._size
 
-    def enqueue(self, value):
+    def enqueue(self, val):
         """Add a new value to the Queue"""
-        self.stack1.push(value)
+        self.stack1.push(val)
         return self
 
     def dequeue(self):
         """Remove the values in a Queue"""
         if len(self) == 0:
             raise ValueError('The queue is already empty')
+
         while self.stack1.peek() is not None:
-            self.stack2.push(self.stack1.pop().value)
+            self.stack2.push(self.stack1.pop().val)
 
         output = self.stack2.pop()
 
         while self.stack2.peek() is not None:
-            self.stack1.push(self.stack2.pop().value)
+            self.stack1.push(self.stack2.pop().val)
 
-        return output.value
-
+        return output.val

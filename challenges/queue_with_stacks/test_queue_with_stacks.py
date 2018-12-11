@@ -40,9 +40,9 @@ def test_enqueue_method(empty_queue):
 
 def test_enqueue_method_two(small_queue):
     """Test the enqueue method a second time"""
-    assert len(small_queue) == 3
-    small_queue.enqueue(4)
-    assert len(small_queue) == 4
+    assert len(small_queue) == 1
+    small_queue.enqueue(2)
+    assert len(small_queue) == 2
 
 
 def test_dequeue_method(larger_queue):
@@ -64,8 +64,8 @@ def test_dequeue_of_one_value(small_queue):
     assert small_queue.dequeue() == 1
 
 
-def test_dequque_on_larger_queue(larger_queue):
-    """Tests the dequque method running through an entire queue"""
+def test_dequeue_on_larger_queue(larger_queue):
+    """Tests the dequeue method running through an entire queue"""
     assert larger_queue.dequeue() == 1
     assert larger_queue.dequeue() == 2
     assert larger_queue.dequeue() == 3

@@ -37,12 +37,12 @@ def graph_filled_for_traversal():
     return g
 
 
-def test_graph_exists():
+def test_that_graph_exists():
     """Test that the graph class has been imported correctly"""
     assert Graph
 
 
-def test_graph_adds_edge(graph_filled):
+def test_graph_add_edge(graph_filled):
     """Test the add method on the graph class"""
     graph_filled.add_edge('C', 'A', 77)
     assert graph_filled.graph == {
@@ -55,7 +55,7 @@ def test_graph_adds_edge(graph_filled):
     }
 
 
-def test_graph_adds_vert(graph_filled):
+def test_graph_add_vertex(graph_filled):
     """Test the add vertex method on a graph class"""
     graph_filled.add_vert('G')
     assert graph_filled.graph == {
@@ -69,36 +69,36 @@ def test_graph_adds_vert(graph_filled):
     }
 
 
-def test_has_vert(graph_filled):
+def test_has_vertex(graph_filled):
     """Test for a vertext that exists in the graph"""
     assert graph_filled.has_vert('D')
 
 
-def test_doesnt_have_vert(graph_filled):
+def test_does_not_have_vertex(graph_filled):
     """Test for a vertex that does not exist in the graph"""
     assert not graph_filled.has_vert('Z')
 
 
-def test_empty_doesnt_have_vert(graph_empty):
+def test_empty_does_not_have_vertex(graph_empty):
     """Test an empty graph for a vertex that does not exist"""
     assert not graph_empty.has_vert('Z')
 
 
-def test_gets_no_neighbors_none(graph_filled):
+def test_neighbor_does_not_exist(graph_filled):
     """Test for a graph that does not have a value"""
     assert graph_filled.get_neighbors('Z') == []
 
 
-def test_gets_no_neighbors_actual(graph_filled):
+def test_neightbor_exists(graph_filled):
     """Test for a vertex that does have a neighbor"""
     assert graph_filled.get_neighbors('A') == {'B': 10}.keys()
 
 
-def test_returns_length(graph_filled):
+def test_return_correct_length(graph_filled):
     """Test the correct length of a graph"""
     assert len(graph_filled) == 6
 
 
-def test_returns_length_empty(graph_empty):
+def test_return_length_of_empty(graph_empty):
     """Test that an empty graph does return zero"""
     assert len(graph_empty) == 0
